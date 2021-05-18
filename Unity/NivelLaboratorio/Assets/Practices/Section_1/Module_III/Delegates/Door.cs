@@ -1,29 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
 {
     private bool open;
+    private MeshRenderer meshRenderer;
+
+    private void Awake() {
+        meshRenderer = GetComponent<MeshRenderer>();
+    }
 
     private void OnEnable() 
     {
-        MasterDelegate.OnDoAnything += EnableDoor;
+        MasterDelegate.OnStayInTheTrigger += EnableDoor;
     }
 
     private void Update() 
     {
         if (open)
-            transform.Translate((Vector3.up * 5f) * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(0f, 20f, 0f), 0.5f);
     }
 
-    void EnableDoor()
+    void EnableDoor(bool option)
     {
-        open = true;
+        open = option;
     }
 
     private void OnDisable() 
     {
-        MasterDelegate.OnDoAnything += EnableDoor;
+        MasterDelegate.OnStayInTheTrigger += EnableDoor;
     }
 }
