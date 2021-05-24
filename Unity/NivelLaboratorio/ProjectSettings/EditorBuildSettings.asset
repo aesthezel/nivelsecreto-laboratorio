@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Code/Herency/Abstract/Scenes/AbstractScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Practices/Section_1/Module_I/MainMenu_Example.unity
+    guid: 8786b26e9a2cdbf4cb6ffc842855d8fc
   - enabled: 1
-    path: Assets/Code/Herency/Abstract/Scenes/Next.unity
-    guid: d7074c3a55e642c4c92ec596899441d7
+    path: Assets/Practices/Section_1/Module_I/Transforms_Example.unity
+    guid: 86137e86b305e854dafdb664d01dc9cc
   m_configObjects: {}

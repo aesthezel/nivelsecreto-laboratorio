@@ -5,11 +5,14 @@ namespace Practices.Section_1.Module_V.Design_Patterns.Behavioral_Patterns.Obser
 {
     public class Timer : MonoBehaviour
     {
-        private float duration = 9f;
+        private float duration = 200f;
         private float halfTime;
 
         public delegate void TimerStarted();
         public static event TimerStarted OnTimerStarted;
+
+        public delegate void SecondPassed();
+        public static event SecondPassed OnSecondPassed;
 
         public delegate void HalfTime();
         public static event HalfTime OnHalfTime;
@@ -38,14 +41,15 @@ namespace Practices.Section_1.Module_V.Design_Patterns.Behavioral_Patterns.Obser
             while (Time.time < duration)
             {
                 yield return new WaitForSeconds(time);
-                Debug.Log("Segundos: " + Mathf.Round(Time.time));
+                
+                if(OnSecondPassed != null)
+                    OnSecondPassed();
+
 
                 if ( Mathf.Round(Time.deltaTime) == Mathf.Round(halfTime) )
                 {
                     if (OnHalfTime != null)
-                    {
                         OnHalfTime();
-                    }
                 }
             }
         }

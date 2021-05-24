@@ -15,12 +15,13 @@ namespace Practices.Section_1.Module_II.Interfaces
 
         private void Start()
         {
+            Impulse();
             Destroy(this.gameObject, timeToDestroy);
         }
 
-        private void Update()
+        private void Impulse()
         {
-            _rigidbody.AddForce(Vector3.forward * speed, ForceMode.Acceleration);
+            _rigidbody.AddForce(Vector3.forward * speed, ForceMode.Impulse);
         }
     }
 }

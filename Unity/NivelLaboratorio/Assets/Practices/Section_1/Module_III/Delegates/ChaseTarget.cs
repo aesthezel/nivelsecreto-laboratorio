@@ -7,6 +7,9 @@ public class ChaseTarget : MonoBehaviour
     [SerializeField] private bool chase;
     private NavMeshAgent agent;
     private MeshRenderer meshRenderer;
+
+    [SerializeField] private int damage;
+    [SerializeField] private int critical;
     
 
     public void DoChase(bool option, Color color, ITargeteable targetRecived) // Metodo candidato para el Action

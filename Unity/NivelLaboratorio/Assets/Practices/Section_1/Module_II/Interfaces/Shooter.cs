@@ -47,9 +47,9 @@ namespace Practices.Section_1.Module_II.Interfaces
             if(!waitForShoot && Input.GetKeyDown(shootKey))
             {
                 waitForShoot = true;
-                Instantiate(projectile, shootPoint.position, Quaternion.identity);
+                Transform bulltet = Instantiate(projectile, shootPoint.position, Quaternion.identity);
+                bulltet.SetParent(shootPoint.transform);
                 StartCoroutine(PerformShootDelay(shootDelay));
-                
             }
         }
 
