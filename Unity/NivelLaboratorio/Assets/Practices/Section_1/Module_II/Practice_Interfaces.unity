@@ -897,7 +897,7 @@ MonoBehaviour:
   shootPoint: {fileID: 1509848499}
   projectile: {fileID: 1609389012067200897, guid: 40db94e52b023d34c97055cc5af27005, type: 3}
   shootDelay: 2
-  speed: 50
+  speed: 150
 --- !u!1 &1150732127
 GameObject:
   m_ObjectHideFlags: 0
